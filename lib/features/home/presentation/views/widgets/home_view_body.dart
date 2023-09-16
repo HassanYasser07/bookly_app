@@ -19,6 +19,8 @@ class HomeViewBody extends StatelessWidget {
           child: Text('Best Seller',style: Styles.titleMedium,),
         ),
 
+
+
       ],
     );
   }
