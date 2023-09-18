@@ -16,9 +16,14 @@ class HomeViewBody extends StatelessWidget {
         CustomAppBar(),
         FeaturedBooksListView(),
         Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Text('Best Seller',style: Styles.textStyle18,),
+          padding: EdgeInsets.symmetric(horizontal: 30.0),
+          child: Text(
+            'Best Seller',
+
+            style: Styles.textStyle18,),
         ),
+        SizedBox(height: 30,),
+
         BestSellerListViewItem()
 
 
@@ -35,7 +40,7 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.only(left: 20,right: 20),
       child: SizedBox(
         height: 125,
         child: Row(
@@ -53,7 +58,15 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
             Column(
               children: [
-                Text('data'),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width *.5,
+                  child: Text(
+                    'Harry Potter and the goblet of fire ',
+                    style: Styles.textStyle20,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
+                ),
                 Text('data'),
 
 
