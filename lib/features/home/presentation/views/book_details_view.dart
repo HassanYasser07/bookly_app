@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/style.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -39,8 +40,10 @@ class BookDetailsView extends StatelessWidget {
                   child: Text('Rudyard Kioling',style: Styles.textStyle18.copyWith(
 
                     fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w300
-                  ),))
+                    fontWeight: FontWeight.w300,
+                  ),)),
+              SizedBox(height: 18,),
+              BookRating(mainAxisAlignment: MainAxisAlignment.center,),
             ],
           ),
         ),
