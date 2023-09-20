@@ -14,7 +14,7 @@ class BookDetailsView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomBookDetailsAppBar(),
+            const CustomBookDetailsAppBar(),
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: width *.17),
               child: AspectRatio(
