@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/style.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,9 @@ class BookDetailsView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             children: [
-              CustomBookDetailsAppBar(),
+              const SizedBox(height: 5,),
+              const CustomBookDetailsAppBar(),
+          const SizedBox(height: 40,),
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: width *.2),
             child: AspectRatio(
@@ -32,9 +35,9 @@ class BookDetailsView extends StatelessWidget {
               ),
             ),
           ),
-              SizedBox(height: 43,),
+              const SizedBox(height: 43,),
               Text('The Jungle Book',style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),),
-              SizedBox(height: 6,),
+              const SizedBox(height: 6,),
               Opacity(
                 opacity: .7,
                   child: Text('Rudyard Kioling',style: Styles.textStyle18.copyWith(
@@ -42,8 +45,10 @@ class BookDetailsView extends StatelessWidget {
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.w300,
                   ),)),
-              SizedBox(height: 18,),
-              BookRating(mainAxisAlignment: MainAxisAlignment.center,),
+              const SizedBox(height: 18,),
+              const BookRating(mainAxisAlignment: MainAxisAlignment.center,),
+              const SizedBox(height: 37,),
+              const BooksAction(),
             ],
           ),
         ),
