@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/assets_image.dart';
-class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({Key? key}) : super(key: key);
+class CustomBookItem extends StatelessWidget {
+  const CustomBookItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.2/3.6,
+      aspectRatio: 2.5/4,
       child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

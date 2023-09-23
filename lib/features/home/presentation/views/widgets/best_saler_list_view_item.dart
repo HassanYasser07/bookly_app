@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/routes.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custombook_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/utils/assets_image.dart';
 import '../../../../../core/utils/style.dart';
 import 'book_rating_item.dart';
 
@@ -19,17 +19,7 @@ class BestSellerListViewItem extends StatelessWidget {
           height: 125,
           child: Row(
             children: [
-              AspectRatio(
-                aspectRatio: 2.5/4,
-                child: Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image:AssetImage(AssetsData.test)
-                    ),
-                  ),
-                ),
-              ),
+             const CustomBookItem(),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
