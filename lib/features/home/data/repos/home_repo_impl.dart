@@ -9,7 +9,7 @@ class HomeRepoImpl implements HomeRepo{
 
   HomeRepoImpl(this.apiServices);
   @override
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async{
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async{
     try{
       var data=await apiServices.git(endPoint: 'volumes? Filtering=free-ebooks&Sorting=newest &q=subject:Programming');
       List<BookModel> books=[];
@@ -20,10 +20,7 @@ class HomeRepoImpl implements HomeRepo{
 
     }on Exception catch(e){
       return left(ServerFailure());
-    }
-    
-
-  }
+    }}
 
 
   @override
