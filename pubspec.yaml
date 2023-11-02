@@ -29,6 +29,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flutter_bloc: ^8.1.3
   dio: ^5.3.3
   dartz: ^0.10.1
   google_fonts: ^6.0.0
