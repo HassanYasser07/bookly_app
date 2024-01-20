@@ -14,6 +14,7 @@ class HomeViewBody extends StatelessWidget {
         CustomAppBar(),
         Expanded(
       child: CustomScrollView(
+        physics: BouncingScrollPhysics(),
          slivers: [
          SliverToBoxAdapter(
       child:  Column(
