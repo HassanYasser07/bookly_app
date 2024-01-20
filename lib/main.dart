@@ -9,7 +9,7 @@ import 'core/utils/routes.dart';
 import 'features/home/presentation/manger/newest books cubit/newest__books_cubit.dart';
 
 void main() {
-  setupServicesLocator();
+  setup();
   runApp(const BooklyApp());
 }
 
@@ -19,21 +19,23 @@ class BooklyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  MultiBlocProvider(
+    return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) =>FeaturedBooksCubit(getIt.get<HomeRepoImpl>())),
-        BlocProvider(create: (context) =>NewestBooksCubit(getIt.get<HomeRepoImpl>())),
+        BlocProvider(
+          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>(),
+          )..fetchFeatureBooks(),
+        ),
+        BlocProvider(
+            create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>())),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         routerConfig: Routes.router,
         theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: kPrimaryColor,
-          textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
-        ),
+            scaffoldBackgroundColor: kPrimaryColor,
+            textTheme:
+                GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
       ),
     );
   }
 }
-
-
