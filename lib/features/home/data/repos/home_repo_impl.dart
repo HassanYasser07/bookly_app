@@ -12,7 +12,7 @@ class HomeRepoImpl implements HomeRepo{
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async{
     try{
-      var data=await apiServices.git(endPoint: 'volumes? Filtering=free-ebooks&Sorting=newest &q=subject:Programming');
+      var data=await apiServices.git(endPoint: 'volumes? Filtering=free-ebooks&Sorting=newest &q=subject:computer science');
       List<BookModel> books=[];
       for(var item in data['items']){
         books.add(BookModel.fromJson(item));
@@ -30,6 +30,25 @@ class HomeRepoImpl implements HomeRepo{
   Future<Either<Failure, List<BookModel>>> fetchFeatureBooks() async{
     try{
       var data=await apiServices.git(endPoint: 'volumes? Filtering=free-ebooks&Sorting=newest &q=subject:Programming');
+      List<BookModel> books=[];
+      for(var item in data['items']){
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+
+    }on Exception catch(e){
+      if(e is DioException){
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
+
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks({required String category}) async{
+    try{
+      var data=await apiServices.git(endPoint: 'volumes? Filtering=free-ebooks&sorting=relevance &Sorting=newest &q=subject:Programming');
       List<BookModel> books=[];
       for(var item in data['items']){
         books.add(BookModel.fromJson(item));

@@ -15,16 +15,16 @@ class BestSellerListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(Routes.kBoolDetailsView);
+        GoRouter.of(context).push(Routes.kBookDetailsView);
       },
       child: Padding(
         padding: const EdgeInsets.only(left: 30, right: 30),
         child: SizedBox(
-          height: 125,
+          height: 150,
           child: Row(
             children: [
               CustomBookItem(
-                imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
               ),
               SizedBox(
                 width: 15,

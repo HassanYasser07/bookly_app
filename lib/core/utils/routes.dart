@@ -6,7 +6,7 @@ import '../../features/spalsh/presentation/views/splash_view.dart';
 
 abstract class Routes{
   static const kHomeView='/homeView';
-  static const kBoolDetailsView='/BoolDetailsView';
+  static const kBookDetailsView='/BoolDetailsView';
   static const kSearchView='/SearchView';
 
 
@@ -22,7 +22,7 @@ abstract class Routes{
         builder: (context, state) => const HomeView(),
       ),
       GoRoute(
-        path: kBoolDetailsView,
+        path: kBookDetailsView,
         builder: (context, state) => const BookDetailsView(),
       ),
       GoRoute(
