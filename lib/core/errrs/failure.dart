@@ -1,3 +1,3 @@
-abstract class Failure{
+ class Failure{
 
 }
