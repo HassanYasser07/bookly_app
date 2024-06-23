@@ -14,6 +14,7 @@ import 'core/utils/routes.dart';
 import 'features/spalsh/presentation/views/splash_view.dart';
 
 void main() {
+  setup();
   runApp(const BooklyApp());
 }
 
@@ -25,8 +26,8 @@ class BooklyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context)=>FeaturedBooksCubit(getIt<HomeRepoImpl>(),)),
-        BlocProvider(create: (context)=>NewestBooksCubit(getIt<HomeRepoImpl>())),
+        BlocProvider(create: (context)=>FeaturedBooksCubit(getIt.get<HomeRepoImpl>(),)..fetchFeaturedBooks()),
+        BlocProvider(create: (context)=>NewestBooksCubit(getIt.get<HomeRepoImpl>())),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
