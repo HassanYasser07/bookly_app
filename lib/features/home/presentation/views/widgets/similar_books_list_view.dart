@@ -18,7 +18,7 @@ class SimilarBooksListView extends StatelessWidget {
                 itemBuilder: (context,index){
                   return const Padding(
                     padding: EdgeInsets.all(1.0),
-                    child:  CustomBookItem(),
+                    child:  CustomBookImage(imageUrl: 'https://images.toucharger.com/img/graphiques/fonds-d-ecran/nature--paysages/coucher-de-soleil/polynesie.72440.jpg',),
                   );
                 }),
           );

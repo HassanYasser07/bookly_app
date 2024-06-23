@@ -1,20 +1,19 @@
- import 'package:flutter/material.dart';
+ import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/assets_image.dart';
-class CustomBookItem extends StatelessWidget {
-  const CustomBookItem({Key? key}) : super(key: key);
+class CustomBookImage extends StatelessWidget {
+  final String imageUrl;
+  const CustomBookImage({Key? key, required this.imageUrl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.5/4,
-      child: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.fill,
-              image:AssetImage(AssetsData.test)
-          ),
-        ),
+      child: CachedNetworkImage(
+        fit: BoxFit.fill,
+        imageUrl: imageUrl,
+
       ),
     );
   }
