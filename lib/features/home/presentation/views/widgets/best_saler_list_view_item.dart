@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/routes.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custombook_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -7,8 +8,9 @@ import 'book_rating_item.dart';
 
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({Key? key}) : super(key: key);
 
+  const BestSellerListViewItem({Key? key, required this.bookModel}) : super(key: key);
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,28 +21,32 @@ class BestSellerListViewItem extends StatelessWidget {
           height: 125,
           child: Row(
             children: [
-             const CustomBookImage(imageUrl: '',),
+              CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,),
+              SizedBox(width: MediaQuery.of(context).size.width*.05,),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
                       width: MediaQuery.of(context).size.width *.5,
-                      child: const Text(
-                        'Harry Potter and the goblet of fire ',
+                      child:  Text(
+                        bookModel.volumeInfo.title!,
                         style: Styles.textStyle20,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
                       ),
                     ),
                     const SizedBox(height: 3,),
-                    const Text('J.k. Rowling',style: Styles.textStyle14,),
+                     Text(bookModel.volumeInfo.authors![0],style: Styles.textStyle14,),
                     const SizedBox(height: 3,),
                     Row(
                       children: [
-                        Text('19.99',style: Styles.textStyle14.copyWith(fontWeight: FontWeight.bold),),
+                        Text('Free',style: Styles.textStyle14.copyWith(fontWeight: FontWeight.bold),),
                         const Spacer(),
-                        const BookRating()
+                         BookRating(
+                          rating:bookModel.volumeInfo.averageRating?? 0 ,
+                          count:bookModel.volumeInfo.ratingsCount?? 0 ,
+                        )
                       ],),
 
 

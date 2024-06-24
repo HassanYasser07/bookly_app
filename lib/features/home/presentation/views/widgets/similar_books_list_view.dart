@@ -1,7 +1,9 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'custombook_item.dart';
 class SimilarBooksListView extends StatelessWidget {
-  const SimilarBooksListView({Key? key}) : super(key: key);
+
+  const SimilarBooksListView({Key? key, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +18,9 @@ class SimilarBooksListView extends StatelessWidget {
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context,index){
-                  return const Padding(
+                  return  Padding(
                     padding: EdgeInsets.all(1.0),
-                    child:  CustomBookImage(imageUrl: 'https://images.toucharger.com/img/graphiques/fonds-d-ecran/nature--paysages/coucher-de-soleil/polynesie.72440.jpg',),
+                    child:  CustomBookImage(imageUrl: '',),
                   );
                 }),
           );
