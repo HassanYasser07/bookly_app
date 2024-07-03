@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../home/presentation/views/widgets/best_saler_list_view_item.dart';
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({Key? key}) : super(key: key);
 
@@ -10,6 +9,8 @@ class SearchResultListView extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemCount: 10,
       itemBuilder: (context,index){
+        return null;
+
         // return const BestSellerListViewItem();
       },
     );

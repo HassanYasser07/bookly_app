@@ -15,7 +15,7 @@ class BestSellerListView extends StatelessWidget {
       builder: (context, state) {
         if(state is NewestBooksSuccess){
           return   ListView.builder(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             padding: EdgeInsets.zero,
             itemCount: state.books.length,
             itemBuilder: (context, index) {
@@ -30,7 +30,7 @@ class BestSellerListView extends StatelessWidget {
         }else if(state is NewestBooksFailure ){
           return CustomErrorWidget(errMessage: state.errMessage);
         }else{
-          return CircularLoadingIndicator();
+          return const CircularLoadingIndicator();
         }
 
       },
